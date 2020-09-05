@@ -4,6 +4,8 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import TestScreen from '../screens/Test';
 import { HomeStack, NotificationStack, OrderStack, ProfileStack } from './Stack';
 
+import COLOR from '../constants/color';
+
 const Tab = createBottomTabNavigator();
 
 const BottomTab = () => {
@@ -28,8 +30,8 @@ const BottomTab = () => {
         }
       })}
       tabBarOptions={{
-        activeTintColor: '#5395dd',
-        inactiveTintColor: '#d7d7d7'
+        activeTintColor: COLOR.accent1,
+        inactiveTintColor: COLOR.accent4
       }}
     >
       <Tab.Screen name="Home" component={HomeStack} />
