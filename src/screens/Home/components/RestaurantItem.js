@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, StyleSheet } from 'react-native';
 import { MaterialIcons } from 'react-native-vector-icons';
 import COLOR from '../../../constants/color';
 import TextStyle from '../../../styles/TextStyle';
@@ -17,38 +17,17 @@ const RestaurantItem = (props) => {
   } = props;
 
   return (
-    <View style={{
-      flexDirection: 'row',
-      height: 92,
-      borderRadius: 10,
-      marginBottom: 12
-    }}>
-      <View
-        style={{
-          width: 76,
-          height: 76,
-          backgroundColor: 'blue',
-          margin: 8,
-          borderRadius: 8
-        }}
-      >
-        <Image source={imageUrl} />
-      </View>
+    <View style={styles.container}>
+      <Image
+        source={imageUrl}
+        style={styles.restaurantImage}
+      />
 
-      <View style={{
-        flex: 1,
-        paddingRight: 8,
-        paddingVertical: 12
-      }}>
-        <View>
-          <Text style={TextStyle.headline1}>
-            {name}
-          </Text>
-        </View>
-        <View style={{
-          marginTop: 4,
-          marginBottom: 16
-        }}>
+      <View style={styles.restaurantInfo}>
+        <Text style={TextStyle.headline1}>
+          {name}
+        </Text>
+        <View style={styles.restaurantAddress}>
           <Text
             style={TextStyle.body4}
             numberOfLines={1}  
@@ -56,27 +35,17 @@ const RestaurantItem = (props) => {
             {address}
           </Text>
         </View>
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between'
-          }}
-        >
-          <View style={{
-            flexDirection: 'row'
-          }}>
-            <RatingStar />
-            <RatingStar />
-            <RatingStar />
-            <RatingStar />
-            <RatingStar />
+
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+          <View style={{ flexDirection: 'row' }}>
+            {
+              [...Array(5)].map((element, index) => (
+                <RatingStar key={index} />
+              ))
+            }
           </View>
-          <View style={{
-            flexDirection: 'row'
-          }}>
-            <View style={{
-              flexDirection: 'row'
-            }}>
+          <View style={{ flexDirection: 'row' }}>
+            <View style={{ flexDirection: 'row' }}>
               <MaterialIcons name='location-on' size={16} color={COLOR.accent1} />
               <Text style={[ TextStyle.body4, { paddingLeft: 2 } ]}>
                 {distance}
@@ -100,3 +69,25 @@ const RestaurantItem = (props) => {
 };
 
 export default RestaurantItem;
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    height: 92,
+    borderRadius: 10,
+    marginBottom: 12
+  },
+  restaurantImage: {
+    margin: 8,
+    borderRadius: 8
+  },
+  restaurantInfo: {
+    flex: 1,
+    paddingRight: 8,
+    paddingVertical: 12
+  },
+  restaurantAddress: {
+    marginTop: 4,
+    marginBottom: 16
+  }
+});
