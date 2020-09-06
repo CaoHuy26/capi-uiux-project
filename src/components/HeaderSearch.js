@@ -1,26 +1,30 @@
 import React from 'react';
-import { View, Text, TextInput, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { Ionicons, MaterialIcons } from 'react-native-vector-icons';
 import COLOR from '../constants/color';
 
 const HeaderSearch = () => {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.inputSearchContainer}>
-      <View style={styles.inputSearch}>
-        <Ionicons
-          name="ios-search"
-          size={20}
-          color={COLOR.neutral4}
-          style={styles.searchIcon}
-        />
-        <TextInput
-          style={{ flex: 1 }}
-          placeholder="Tìm kiếm"
-          placeholderTextColor={COLOR.neutral3}
-          keyboardType="web-search"
-          returnKeyType="done"
-        />
-      </View>
+      <TouchableOpacity
+        style={styles.inputSearch}
+        onPress={() => navigation.navigate('Search')}
+      >
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <Ionicons
+            name="ios-search"
+            size={20}
+            color={COLOR.neutral4}
+            style={styles.searchIcon}
+          />
+          <Text style={styles.searchText}>
+            Tìm kiếm
+          </Text>
+        </View>
+      </TouchableOpacity>
       <View
         style={{
           flexDirection: 'row',
@@ -42,7 +46,8 @@ const styles = StyleSheet.create({
   inputSearchContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginHorizontal: 16
+    marginHorizontal: 16,
+    flex: 1
   },
   inputSearch: {
     width: 264,
@@ -59,6 +64,11 @@ const styles = StyleSheet.create({
   searchIcon: {
     paddingHorizontal: 8,
     paddingLeft: 12
+  },
+  searchText: {
+    flex: 1,
+    color: COLOR.neutral3,
+    fontSize: 12
   },
   locationName: {
     color: '#565656',
