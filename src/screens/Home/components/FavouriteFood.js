@@ -1,9 +1,7 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import { View, Text, Image, ScrollView } from 'react-native';
 import TextStyle from '../../../styles/TextStyle';
-import COLOR from '../../../constants/color';
-import { ScrollView } from 'react-native-gesture-handler';
+import RatingStar from '../../../components/RatingStar';
 
 const favouriteFoods = [
   {
@@ -33,7 +31,7 @@ const FavouriteFood = () => {
   return (
     <View
       style={{
-        marginVertical: 18
+        marginTop: 18
       }}
     >
       <Text style={[TextStyle.headline1, { marginLeft: 16, marginBottom: 10 }]}>
@@ -84,7 +82,7 @@ const FavouriteFood = () => {
                   }}
                 >
                   <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                    <Ionicons name='ios-star' size={16} color={COLOR.accent3} />
+                    <RatingStar />
                     <Text style={{ paddingLeft: 2, fontSize: 12 }}>5/5</Text>
                   </View>
                   <View>

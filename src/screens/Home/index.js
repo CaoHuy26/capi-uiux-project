@@ -4,7 +4,7 @@ import Swiper from './components/Swiper';
 import Category from './components/Category';
 import FavouriteFood from './components/FavouriteFood';
 import CurrentLocation from './components/CurrentLocation';
-import Restaurant from './components/Restaurant';
+import RestaurantList from './components/RestaurantList';
 
 const HomeScreen = () => {
   return (
@@ -17,7 +17,9 @@ const HomeScreen = () => {
 
       <FavouriteFood />
 
-      <Restaurant />
+      <RestaurantList title='Nhà hàng' />
+
+      <RestaurantList title='Cửa hàng thực phẩm' />
     </ScrollView>
   )
 };
