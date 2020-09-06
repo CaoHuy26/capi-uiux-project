@@ -1,9 +1,16 @@
 import { StyleSheet } from 'react-native';
+import COLOR from '../constants/color';
 
 const TextStyle = StyleSheet.create({
-  heading1: {
+  headline1: {
     fontSize: 16,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    color: COLOR.neutral1
+  },
+  headline3: {
+    fontSize: 12,
+    fontWeight: 'bold',
+    color: COLOR.neutral1
   }
 });
 
