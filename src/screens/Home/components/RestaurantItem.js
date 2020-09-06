@@ -1,11 +1,21 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import { MaterialIcons } from 'react-native-vector-icons';
 import COLOR from '../../../constants/color';
 import TextStyle from '../../../styles/TextStyle';
 import RatingStar from '../../../components/RatingStar';
 
-const RestaurantItem = () => {
+const RestaurantItem = (props) => {
+  const {
+    id,
+    name,
+    imageUrl,
+    address,
+    rating,
+    distance,
+    time
+  } = props;
+
   return (
     <View style={{
       flexDirection: 'row',
@@ -21,7 +31,9 @@ const RestaurantItem = () => {
           margin: 8,
           borderRadius: 8
         }}
-      />
+      >
+        <Image source={imageUrl} />
+      </View>
 
       <View style={{
         flex: 1,
@@ -30,7 +42,7 @@ const RestaurantItem = () => {
       }}>
         <View>
           <Text style={TextStyle.headline1}>
-            Pao Quan
+            {name}
           </Text>
         </View>
         <View style={{
@@ -41,7 +53,7 @@ const RestaurantItem = () => {
             style={TextStyle.body4}
             numberOfLines={1}  
           >
-            Ngõ 62 Trần Thái Tông, Cầu Giấy, Hà Nội
+            {address}
           </Text>
         </View>
         <View
@@ -57,7 +69,7 @@ const RestaurantItem = () => {
             <RatingStar />
             <RatingStar />
             <RatingStar />
-            <RatingStar disable />
+            <RatingStar />
           </View>
           <View style={{
             flexDirection: 'row'
@@ -66,14 +78,18 @@ const RestaurantItem = () => {
               flexDirection: 'row'
             }}>
               <MaterialIcons name='location-on' size={16} color={COLOR.accent1} />
-              <Text style={{ paddingLeft: 2 }}>3.5km</Text>
+              <Text style={[ TextStyle.body4, { paddingLeft: 2 } ]}>
+                {distance}
+              </Text>
             </View>
             <View style={{
               flexDirection: 'row',
               paddingLeft: 6
             }}>
               <MaterialIcons name='access-time' size={16} color={COLOR.accent1} />
-              <Text style={{ paddingLeft: 2 }}>30 phút</Text>
+              <Text style={[ TextStyle.body4, { paddingLeft: 2 } ]}>
+                {time}
+              </Text>
             </View>
           </View>
         </View>

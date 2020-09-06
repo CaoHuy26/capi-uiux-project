@@ -4,7 +4,7 @@ import SpaceStyle from '../../../styles/SpaceStyle';
 import TextStyle from '../../../styles/TextStyle';
 import RestaurantItem from './RestaurantItem';
 
-const RestaurantList = ({ title }) => {
+const RestaurantList = ({ title, datas }) => {
   return (
     <View
       style={[SpaceStyle.container, { marginTop: 18 }]}
@@ -14,9 +14,14 @@ const RestaurantList = ({ title }) => {
       </Text>
 
       <View>
-        <RestaurantItem />
-        <RestaurantItem />
-        <RestaurantItem />
+        {
+          datas.map(data => (
+            <RestaurantItem
+              key={data.id}
+              {...data}
+            />
+          ))
+        }
       </View>
     </View>
   );
