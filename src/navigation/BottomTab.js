@@ -31,7 +31,8 @@ const BottomTab = () => {
       })}
       tabBarOptions={{
         activeTintColor: COLOR.accent1,
-        inactiveTintColor: COLOR.accent4
+        inactiveTintColor: COLOR.accent4,
+        showLabel: false
       }}
     >
       <Tab.Screen name="Home" component={HomeStack} />

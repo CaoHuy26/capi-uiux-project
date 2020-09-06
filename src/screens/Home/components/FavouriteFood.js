@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, Image, ScrollView } from 'react-native';
+import { MaterialIcons } from 'react-native-vector-icons';
 import TextStyle from '../../../styles/TextStyle';
 import RatingStar from '../../../components/RatingStar';
 
@@ -92,7 +93,16 @@ const FavouriteFood = () => {
                   </View>
                 </View>
               </View>
-
+              
+              <View
+                style={{
+                  position: 'absolute',
+                  top: 8,
+                  right: 8
+                }}
+              >
+                <MaterialIcons name='favorite-border' size={24} color='#EB5757' />
+              </View>
             </View>
           ))
         }
