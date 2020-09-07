@@ -1,9 +1,10 @@
-import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import React, { useCallback } from 'react';
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { MaterialIcons } from 'react-native-vector-icons';
 import COLOR from '../../../constants/color';
 import TextStyle from '../../../styles/TextStyle';
 import RatingStar from '../../../components/RatingStar';
+import { useNavigation } from '@react-navigation/native';
 
 const DistanceAndTime = ({ distance, time }) => (
   <View style={{ flexDirection: 'row' }}>
@@ -45,8 +46,17 @@ const RestaurantItem = (props) => {
     discountPercent
   } = props;
 
+  const navigation = useNavigation();
+
+  const moveToDetail = useCallback(() => {
+    navigation.navigate('RestaurantDetail', props);
+  }, []);
+
   return (
-    <View style={styles.container}>
+    <TouchableOpacity
+      onPress={moveToDetail}
+      style={styles.container}
+    >
       <Image
         source={imageUrl}
         style={styles.restaurantImage}
@@ -82,7 +92,7 @@ const RestaurantItem = (props) => {
         </View>
       </View>
 
-    </View>
+    </TouchableOpacity>
   );
 };
 
