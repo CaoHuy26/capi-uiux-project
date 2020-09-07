@@ -12,6 +12,15 @@ const TextStyle = StyleSheet.create({
     fontWeight: 'bold',
     color: COLOR.neutral1
   },
+  body1: {
+    fontSize: 16,
+    color: COLOR.neutral1
+  },
+  body2: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    color: COLOR.neutral2
+  },
   body4: {
     fontSize: 12,
     color: COLOR.neutral4

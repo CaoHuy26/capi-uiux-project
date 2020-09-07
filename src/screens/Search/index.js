@@ -1,11 +1,18 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { ScrollView } from 'react-native';
+import SearchHistory from './components/SearchHistory';
+import PopularFood from './components/PopularFood';
+import BigDeal from './components/BigDeal';
 
 const SearchScreen = () => {
   return (
-    <View>
-      <Text>Search Screen</Text>
-    </View>
+    <ScrollView>
+      <SearchHistory />
+
+      <PopularFood />
+
+      <BigDeal />
+    </ScrollView>
   );
 };
 

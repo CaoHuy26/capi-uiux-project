@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ScrollView, Image } from 'react-native';
+import { ScrollView } from 'react-native';
 import Swiper from './components/Swiper';
 import Category from './components/Category';
 import FavouriteFood from './components/FavouriteFood';

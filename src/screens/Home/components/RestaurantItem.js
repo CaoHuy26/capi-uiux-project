@@ -5,6 +5,34 @@ import COLOR from '../../../constants/color';
 import TextStyle from '../../../styles/TextStyle';
 import RatingStar from '../../../components/RatingStar';
 
+const DistanceAndTime = ({ distance, time }) => (
+  <View style={{ flexDirection: 'row' }}>
+    <View style={{ flexDirection: 'row' }}>
+      <MaterialIcons name='location-on' size={16} color={COLOR.accent1} />
+      <Text style={[ TextStyle.body4, { paddingLeft: 2 } ]}>
+        {distance}
+      </Text>
+    </View>
+    <View style={{
+      flexDirection: 'row',
+      paddingLeft: 6
+    }}>
+      <MaterialIcons name='access-time' size={16} color={COLOR.accent1} />
+      <Text style={[ TextStyle.body4, { paddingLeft: 2 } ]}>
+        {time}
+      </Text>
+    </View>
+  </View>
+);
+
+const Discount = ({ discountPercent }) => (
+  <View style={styles.discountContainer}>
+    <Text style={TextStyle.body2}>
+      -{discountPercent}%
+    </Text>
+  </View>
+)
+
 const RestaurantItem = (props) => {
   const {
     id,
@@ -13,7 +41,8 @@ const RestaurantItem = (props) => {
     address,
     rating,
     distance,
-    time
+    time,
+    discountPercent
   } = props;
 
   return (
@@ -44,23 +73,12 @@ const RestaurantItem = (props) => {
               ))
             }
           </View>
-          <View style={{ flexDirection: 'row' }}>
-            <View style={{ flexDirection: 'row' }}>
-              <MaterialIcons name='location-on' size={16} color={COLOR.accent1} />
-              <Text style={[ TextStyle.body4, { paddingLeft: 2 } ]}>
-                {distance}
-              </Text>
-            </View>
-            <View style={{
-              flexDirection: 'row',
-              paddingLeft: 6
-            }}>
-              <MaterialIcons name='access-time' size={16} color={COLOR.accent1} />
-              <Text style={[ TextStyle.body4, { paddingLeft: 2 } ]}>
-                {time}
-              </Text>
-            </View>
-          </View>
+          {
+            discountPercent
+             ? <Discount discountPercent={discountPercent} />
+             : <DistanceAndTime distance={distance} time={time} />
+          }
+          
         </View>
       </View>
 
@@ -89,5 +107,13 @@ const styles = StyleSheet.create({
   restaurantAddress: {
     marginTop: 4,
     marginBottom: 16
+  },
+  discountContainer: {
+    width: 64,
+    height: 18,
+    borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: COLOR.accent1
   }
 });
