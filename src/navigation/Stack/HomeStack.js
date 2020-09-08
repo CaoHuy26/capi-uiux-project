@@ -5,7 +5,7 @@ import HeaderSearch from '../../components/HeaderSearch';
 import SearchScreen from '../../screens/Search';
 import HeaderSearchOptions from '../../components/HeaderSearchOptions';
 import HeaderBackButton from '../../components/HeaderBackButton';
-import RestaurantDetailScreen from '../../screens/RestaurantDetail.js';
+import RestaurantDetailScreen from '../../screens/RestaurantDetail';
 import HeaderRightOptions from '../../components/HeaderRightOptions';
 
 const Stack = createStackNavigator();

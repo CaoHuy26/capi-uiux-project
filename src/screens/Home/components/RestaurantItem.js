@@ -103,7 +103,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     height: 92,
     borderRadius: 10,
-    marginBottom: 12
+    marginBottom: 12,
+    borderBottomWidth: 0.2,
+    borderColor: 'rgba(0, 0, 0, 0.2)'
   },
   restaurantImage: {
     margin: 8,

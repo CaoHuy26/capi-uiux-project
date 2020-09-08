@@ -1,5 +1,5 @@
-import React from 'react';
-import { View, Text, Image, ScrollView, StyleSheet } from 'react-native';
+import React, { useCallback } from 'react';
+import { View, Text, Image, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import { MaterialIcons } from 'react-native-vector-icons';
 import TextStyle from '../../../styles/TextStyle';
 import RatingStar from '../../../components/RatingStar';
@@ -61,7 +61,7 @@ const FavouriteFoodItem = ({ favouriteFood }) => {
         </View>
       </View>
       
-      <View
+      <TouchableOpacity
         style={{
           position: 'absolute',
           top: 8,
@@ -69,7 +69,7 @@ const FavouriteFoodItem = ({ favouriteFood }) => {
         }}
       >
         <MaterialIcons name='favorite-border' size={24} color='#EB5757' />
-      </View>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -82,7 +82,7 @@ const FavouriteFood = () => {
       </Text>
       
       <ScrollView
-        style={{ flexDirection: 'row' }}
+        style={{ flexDirection: 'row', paddingBottom: 2 }}
         horizontal
         showsHorizontalScrollIndicator={false}
       >
@@ -108,10 +108,15 @@ const styles = StyleSheet.create({
     height: 160,
     marginLeft: 16,
     borderRadius: 10,
+    backgroundColor: '#fff',
+
+    // Shadow
+    shadowOpacity: 0.9,
     shadowColor: 'rgba(0, 0, 0, 0.1)',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.8,
-    shadowRadius: 1, 
-    backgroundColor: '#fff'
+    shadowRadius: 5,
+    shadowOffset: {
+      width: 0,
+      height: 1
+    }
   }
 });
