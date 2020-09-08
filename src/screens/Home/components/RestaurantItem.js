@@ -32,7 +32,7 @@ const Discount = ({ discountPercent }) => (
       -{discountPercent}%
     </Text>
   </View>
-)
+);
 
 const RestaurantItem = (props) => {
   const {

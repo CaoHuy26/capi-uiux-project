@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { View, Text, Image, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import { MaterialIcons } from 'react-native-vector-icons';
 import TextStyle from '../../../styles/TextStyle';
@@ -51,7 +51,7 @@ const FavouriteFoodItem = ({ favouriteFood }) => {
         >
           <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             <RatingStar />
-            <Text style={{ paddingLeft: 2, fontSize: 12 }}>5/5</Text>
+            <Text style={{ paddingLeft: 4, fontSize: 12 }}>5/5</Text>
           </View>
           <View>
             <Text style={TextStyle.headline3}>

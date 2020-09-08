@@ -2,6 +2,11 @@ import { StyleSheet } from 'react-native';
 import COLOR from '../constants/color';
 
 const TextStyle = StyleSheet.create({
+  title1: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: COLOR.neutral1
+  },
   headline1: {
     fontSize: 16,
     fontWeight: 'bold',
@@ -20,6 +25,11 @@ const TextStyle = StyleSheet.create({
     fontSize: 14,
     fontWeight: 'bold',
     color: COLOR.neutral2
+  },
+  body3: {
+    fontSize: 12,
+    fontWeight: 'bold',
+    color: '#565656'
   },
   body4: {
     fontSize: 12,

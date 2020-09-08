@@ -11,7 +11,7 @@ const restaurants = [
     id: '1',
     name: 'Pao Quán',
     imageUrl: require('../../assets/img/food/food1.png'),
-    address: 'Ngõ 62 Trần Thái Tông, Cầu Giấy, Hà Nội',
+    address: 'Ngõ 62 Trần Thái Tông, Quận Cầu Giấy, Hà Nội',
     distance: '3.5km',
     time: '30 phút',
     rating: 5
