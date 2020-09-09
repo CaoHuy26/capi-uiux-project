@@ -1,12 +1,20 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { StyleSheet, ScrollView } from 'react-native';
+import OrderPendingItem from './components/OrderPendingItem';
 
 const OrderPendingScreen = () => {
   return (
-    <View>
-      <Text>OrderPendingScreen</Text>
-    </View>
+    <ScrollView style={styles.container}>
+      <OrderPendingItem />
+    </ScrollView>
   )
 };
 
 export default OrderPendingScreen;
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#FFF',
+    paddingHorizontal: 16
+  }
+});

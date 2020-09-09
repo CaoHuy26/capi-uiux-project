@@ -5,44 +5,35 @@ import RatingStar from '../../../components/RatingStar';
 import COLOR from '../../../constants/color';
 import Line from '../../../components/Line';
 
-const OrderItem = () => {
+const OrderItem = (props) => {
+  const {
+    id,
+    name,
+    imageUrl,
+    address,
+    rating,
+    price,
+    numberOfItem
+  } = props;
+
   return (
     <View style={styles.container}>
-      <View
-        style={{
-          // backgroundColor: 'blue',
-          flexDirection: 'row'
-        }}
-      >
+      <View style={{ flexDirection: 'row' }}>
         <Image
-          style={{
-            width: 76,
-            height: 76,
-            margin: 8
-          }}
-          source={require('../../../assets/img/food/noti1.png')}
+          style={styles.orderImage}
+          source={imageUrl}
         />
 
-        <View style={{
-          flex: 1,
-          marginVertical: 8,
-          marginRight: 12,
-          justifyContent: 'space-between'
-        }}>
+        <View style={styles.orderInfo}>
           <View>
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'space-between'
-              }}
-            >
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
               <Text style={TextStyle.headline2}>
-                Dâu tây
+                {name}
               </Text>
               <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                 <RatingStar />
                 <Text style={[TextStyle.body3, { marginLeft: 4 }]}>
-                  5/5
+                  {rating}/5
                 </Text>
               </View>
             </View>
@@ -50,7 +41,7 @@ const OrderItem = () => {
               style={[TextStyle.body4, { marginVertical: 4 }]}
               numberOfLines={1}
             >
-              Số 13, Phố Huế, Hai Bà Trưng, Hà Nội
+              {address}
             </Text>
           </View>
           
@@ -58,38 +49,20 @@ const OrderItem = () => {
             fontSize: 14,
             color: COLOR.neutral1
           }}>
-            80.000đ - SL: 1
+            {price} - SL: {numberOfItem}
           </Text>
         </View>
       </View>
 
       <View style={{ paddingHorizontal: 16, marginVertical: 12 }}>
-        <Line color='#C4C4C4' opacity='0.6' />
+        <Line color='#f1f1f1' opacity='0.6' />
       </View>
       
-      <View
-        style={{
-          marginHorizontal: 12,
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          alignItems: 'center'
-        }}
-      >
-        <Text
-          style={{
-            fontSize: 12,
-            fontWeight: '600',
-            color: COLOR.accent3
-          }}
-        >
+      <View style={styles.orderStatus}>
+        <Text style={styles.orderStatusText}>
           Đang đến ...
         </Text>
-        <Text
-          style={{
-            fontSize: 12,
-            fontWeight: 'bold'
-          }}
-        >
+        <Text style={styles.orderStatusTime}>
           15 phút
         </Text>
       </View>
@@ -106,5 +79,31 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderWidth: 0.8,
     borderColor: '#f1f1f1'
+  },
+  orderImage: {
+    width: 76,
+    height: 76,
+    margin: 8
+  },
+  orderInfo: {
+    flex: 1,
+    marginVertical: 8,
+    marginRight: 12,
+    justifyContent: 'space-between'
+  },
+  orderStatus: {
+    marginHorizontal: 12,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center'
+  },
+  orderStatusText: {
+    fontSize: 12,
+    fontWeight: '600',
+    color: COLOR.accent3
+  },
+  orderStatusTime: {
+    fontSize: 12,
+    fontWeight: 'bold'
   }
 });

@@ -1,12 +1,19 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { Text, ScrollView, StyleSheet } from 'react-native';
 
 const CartScreen = () => {
   return (
-    <View>
+    <ScrollView style={styles.container}>
       <Text>CartScreen</Text>
-    </View>
+    </ScrollView>
   )
 };
 
 export default CartScreen;
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#FFF',
+    paddingHorizontal: 16
+  }
+});

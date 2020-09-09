@@ -1,12 +1,19 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { Text, ScrollView, StyleSheet } from 'react-native';
 
 const OrderHistoryScreen = () => {
   return (
-    <View>
+    <ScrollView style={styles.container}>
       <Text>OrderHistoryScreen</Text>
-    </View>
+    </ScrollView>
   )
 };
 
 export default OrderHistoryScreen;
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#FFF',
+    paddingHorizontal: 16
+  }
+});
