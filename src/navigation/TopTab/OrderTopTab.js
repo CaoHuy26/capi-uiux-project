@@ -1,9 +1,11 @@
 import React from 'react';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import OrderScreen from '../../screens/Order';
-import CartScreen from '../../screens/Order/Cart';
-import OrderPendingScreen from '../../screens/Order/OrderPending';
-import OrderHistoryScreen from '../../screens/Order/OrderHistory';
+import {
+  OrderScreen,
+  OrderPendingScreen,
+  CartScreen,
+  OrderHistoryScreen,
+} from '../../screens/Order';
 import COLOR from '../../constants/color';
 
 const Tab = createMaterialTopTabNavigator();
@@ -12,22 +14,23 @@ const OrderTopTab = () => {
   return (
     <Tab.Navigator
       tabBarOptions={{
-        style: {
-          shadowColor: 'transparent'
+        style: { // Style for container
+          shadowColor: 'transparent',
+          height: 36,
+          justifyContent: 'center'
         },
-        activeTintColor: COLOR.accent1,
-        inactiveTintColor: COLOR.accent4,
-        indicatorStyle: {
+        indicatorStyle: { // Style for line
           backgroundColor: COLOR.accent1,
           width: 71,
-          marginLeft: 12,
-          bottom: 12
+          marginLeft: 12
         },
-        labelStyle: {
+        labelStyle: { // Style for text
           fontSize: 12,
           fontWeight: 'bold',
-          textTransform: 'capitalize'
+          textTransform: 'none'
         },
+        activeTintColor: COLOR.accent1,
+        inactiveTintColor: COLOR.accent4
       }}
     >
       <Tab.Screen

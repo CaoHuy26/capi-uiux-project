@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 import TextStyle from '../../../styles/TextStyle';
-import COLOR from '../../../constants/color';
+import Line from '../../../components/Line';
 
 const Food = ({ name, imageUrl }) => {
   return (
@@ -26,15 +26,6 @@ const Food = ({ name, imageUrl }) => {
     </View>
   );
 };
-
-const Line = () => (
-  <View
-    style={{
-      borderWidth: 0.6,
-      borderColor: COLOR.neutral5
-    }}
-  />
-);
 
 const PopularFood = () => {
   return (
