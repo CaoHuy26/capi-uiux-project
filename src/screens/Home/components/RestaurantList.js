@@ -9,7 +9,7 @@ const RestaurantList = ({ title, datas }) => {
     <View
       style={[SpaceStyle.container, { marginTop: 18 }]}
     >
-      <Text style={[TextStyle.headline1]}>
+      <Text style={[TextStyle.headline1, { marginBottom: 8 }]}>
         {title}
       </Text>
 

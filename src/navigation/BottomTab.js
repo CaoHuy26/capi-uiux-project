@@ -2,7 +2,12 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import TestScreen from '../screens/Test';
-import { HomeStack, NotificationStack, OrderStack, ProfileStack } from './Stack';
+import {
+  HomeStack,
+  NotificationStack,
+  OrderStack,
+  ProfileStack
+} from './Stack';
 
 import COLOR from '../constants/color';
 

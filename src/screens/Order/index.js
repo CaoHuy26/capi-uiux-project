@@ -3,7 +3,10 @@ import { View, Text } from 'react-native';
 
 const OrderScreen = () => {
   return (
-    <View>
+    <View style={{
+      flex: 1,
+      backgroundColor: '#fff'
+    }}>
       <Text>OrderScreen</Text>
     </View>
   )
