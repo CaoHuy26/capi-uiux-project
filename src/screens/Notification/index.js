@@ -1,12 +1,13 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { ScrollView } from 'react-native';
+import Notifications from './components/Notifications';
 
 const NotificationScreen = () => {
   return (
-    <View>
-      <Text>NotificationScreen</Text>
-    </View>
-  )
+    <ScrollView>
+      <Notifications />
+    </ScrollView>
+  );
 };
 
 export default NotificationScreen;

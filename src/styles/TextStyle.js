@@ -7,6 +7,11 @@ const TextStyle = StyleSheet.create({
     fontWeight: 'bold',
     color: COLOR.neutral1
   },
+  title2: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: COLOR.neutral1
+  },
   headline1: {
     fontSize: 16,
     fontWeight: 'bold',
