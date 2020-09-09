@@ -19,6 +19,7 @@ const HeaderSearchOptions = () => {
           placeholderTextColor={COLOR.neutral3}
           keyboardType="web-search"
           returnKeyType="done"
+          autoFocus
         />
       </View>
 
