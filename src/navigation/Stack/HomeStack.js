@@ -7,6 +7,7 @@ import HeaderSearchOptions from '../../components/HeaderSearchOptions';
 import HeaderBackButton from '../../components/HeaderBackButton';
 import RestaurantDetailScreen from '../../screens/RestaurantDetail';
 import HeaderRightOptions from '../../components/HeaderRightOptions';
+import HeaderImageBackground from '../../components/HeaderImageBackground';
 
 const Stack = createStackNavigator();
 
@@ -53,6 +54,7 @@ const HomeStack = ({ navigation, route }) => {
         component={RestaurantDetailScreen}
         options={{
           title: null,
+          // headerBackground: () => <HeaderImageBackground />,
           headerStyle: {
             shadowColor: 'transparent'
           },

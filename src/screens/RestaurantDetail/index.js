@@ -66,6 +66,7 @@ export default RestaurantDetailScreen;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#FFF'
+    backgroundColor: '#FFF',
+    paddingTop: 24
   }
 });
