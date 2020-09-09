@@ -1,7 +1,7 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import TestScreen from '../screens/Test';
+import { MaterialIcons } from 'react-native-vector-icons';
+import NullScreen from '../screens/Null';
 import {
   HomeStack,
   NotificationStack,
@@ -9,6 +9,7 @@ import {
   ProfileStack
 } from './Stack';
 
+import BottomTabAddIcon from '../components/BottomTabAddIcon';
 import COLOR from '../constants/color';
 
 const Tab = createBottomTabNavigator();
@@ -20,18 +21,18 @@ const BottomTab = () => {
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
           if (route.name === 'Home') {
-            iconName = 'ios-home';
+            iconName = 'home';
           } else if (route.name === 'Notification') {
-            iconName = 'ios-notifications';
-          } else if (route.name === 'Test') {
-            iconName = 'ios-add-circle';
+            iconName = 'notifications-none';
+          } else if (route.name === 'Add') {
+            return <BottomTabAddIcon style={{ bottom: 20 }} />
           } else if (route.name === 'Order') {
-            iconName = 'ios-bookmarks';
+            iconName = 'library-books';
           } else if (route.name === 'Profile') {
-            iconName = 'ios-person';
+            iconName = 'person-outline';
           }
 
-          return <Ionicons name={iconName} size={size} color={color} />;
+          return <MaterialIcons name={iconName} size={28} color={color} />;
         }
       })}
       tabBarOptions={{
@@ -42,7 +43,7 @@ const BottomTab = () => {
     >
       <Tab.Screen name="Home" component={HomeStack} />
       <Tab.Screen name="Notification" component={NotificationStack} />
-      <Tab.Screen name="Test" component={TestScreen} />
+      <Tab.Screen name="Add" component={NullScreen} />
       <Tab.Screen name="Order" component={OrderStack} />
       <Tab.Screen name="Profile" component={ProfileStack} />
     </Tab.Navigator>
