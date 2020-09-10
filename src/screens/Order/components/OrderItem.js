@@ -74,7 +74,6 @@ export default OrderItem;
 
 const styles = StyleSheet.create({
   container: {
-    height: 142,
     marginTop: 16,
     borderRadius: 10,
     borderWidth: 0.8,
@@ -95,7 +94,8 @@ const styles = StyleSheet.create({
     marginHorizontal: 12,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
+    paddingBottom: 8
   },
   orderStatusText: {
     fontSize: 12,
