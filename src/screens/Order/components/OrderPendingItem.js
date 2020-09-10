@@ -76,7 +76,7 @@ const OrderPendingItem = (props) => {
           {price} - SL: {numberOfItem}
         </Text>
         <TouchableOpacity
-          style={{ marginTop: 4 }}
+          style={{ marginTop: 4, alignSelf: 'flex-start' }}
           onPress={() => onPressCancelOrder()}
         >
           <TextBadge

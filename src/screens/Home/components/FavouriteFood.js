@@ -46,7 +46,8 @@ const FavouriteFoodItem = ({ favouriteFood }) => {
           style={{
             marginTop: 4,
             flexDirection: 'row',
-            justifyContent: 'space-between'
+            justifyContent: 'space-between',
+            alignItems: 'center'
           }}
         >
           <View style={{ flexDirection: 'row', alignItems: 'center' }}>
