@@ -5,8 +5,13 @@ import CartItem from './components/CartItem';
 const CartScreen = () => {
   return (
     <ScrollView style={styles.container}>
-      <CartItem />
-      <CartItem />
+      <CartItem
+        restaurantName='Quán bún Hà Nội'
+        address='Số 13, Phố Huế, Hai Bà Trưng'
+      />
+      <CartItem
+        restaurantName='Quán bún Hà Nội'
+      />
     </ScrollView>
   )
 };

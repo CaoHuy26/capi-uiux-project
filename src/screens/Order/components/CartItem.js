@@ -5,15 +5,9 @@ import TextStyle from '../../../styles/TextStyle';
 import COLOR from '../../../constants/color';
 import Line from '../../../components/Line';
 
-const CartFood = () => {
+const CartFood = ({ id, name, imageUrl, price }) => {
   return (
-    <View
-      style={{
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginBottom: 16
-      }}
-    >
+    <View style={styles.cartFood}>
       <MaterialIcons
         name='radio-button-unchecked'
         size={12}
@@ -21,21 +15,16 @@ const CartFood = () => {
       />
 
       <Image
-        style={{
-          width: 64,
-          height: 64,
-          marginLeft: 12,
-          marginRight: 18
-        }}
-        source={require('../../../assets/img/food/food4.png')}
+        style={styles.imageFood}
+        source={imageUrl}
       />
 
       <View>
         <Text style={TextStyle.headline5}>
-          Bún thang hải sản
+          {name}
         </Text>
         <Text style={[TextStyle.body3, { marginVertical: 8 }]}>
-          80.000đ
+          {price}
         </Text>
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
           <TouchableOpacity>
@@ -61,15 +50,10 @@ const CartFood = () => {
   );
 };
 
-const CartItem = () => {
+const CartItem = ({ id, restaurantName, address }) => {
   return (
     <View style={styles.container}>
-      <View
-        style={{
-          flexDirection: 'row',
-          alignItems: 'flex-start'
-        }}
-      >
+      <View style={{ flexDirection: 'row', alignItems: 'flex-start' }}>
         <MaterialIcons
           style={{ marginTop: 3 }}
           name='radio-button-unchecked'
@@ -78,30 +62,32 @@ const CartItem = () => {
         />
         <View style={{ marginLeft: 12 }}>
           <Text style={TextStyle.headline2}>
-          Quán bún Hà Nội
+            {restaurantName}
           </Text>
           <Text style={TextStyle.body4}>
-            Số 13, Phố Huế, Hai Bà Trưng
+            {address}
           </Text>
         </View>
 
         <Octicons
-          style={{
-            position: 'absolute',
-            top: 0,
-            right: 0
-          }}
-          name='heart'
-          size={20}
-          color='red'
+          style={styles.iconHeart}
+          name='heart' size={20} color='red'
         />
       </View>
 
       <Line style={{ marginTop: 8, marginBottom: 16 }} />
 
       <View>
-        <CartFood />
-        <CartFood />
+        <CartFood
+          name='Bún thang hải sản'
+          price='80.000đ'
+          imageUrl={require('../../../assets/img/food/food4.png')}
+        />
+        <CartFood
+          name='Bún thang hải sản'
+          price='80.000đ'
+          imageUrl={require('../../../assets/img/food/food4.png')}
+        />
       </View>
     </View>
   );
@@ -118,5 +104,21 @@ const styles = StyleSheet.create({
     paddingHorizontal: 18,
     paddingTop: 18,
     marginTop: 18
+  },
+  iconHeart: {
+    position: 'absolute',
+    top: 0,
+    right: 0
+  },
+  cartFood: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 16
+  },
+  imageFood: {
+    width: 64,
+    height: 64,
+    marginLeft: 12,
+    marginRight: 18
   }
 });
