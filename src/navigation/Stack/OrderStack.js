@@ -1,6 +1,9 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { OrderTopTab } from '../TopTab';
+import PaymentScreen from '../../screens/Payment';
+import HeaderBackButton from '../../components/HeaderBackButton';
+import COLOR from '../../constants/color';
 
 const Stack = createStackNavigator();
 
@@ -15,6 +18,22 @@ const OrderStack = () => {
           headerStyle: {
             shadowColor: 'transparent'
           }
+        }}
+      />
+      <Stack.Screen
+        name='Payment'
+        component={PaymentScreen}
+        options={{
+          title: 'Xác nhận và thanh toán',
+          headerTitleStyle: {
+            fontSize: 18,
+            fontWeight: 'bold',
+            color: COLOR.neutral1
+          },
+          headerStyle: {
+            shadowColor: 'transparent',
+          },
+          headerLeft: () => <HeaderBackButton />
         }}
       />
     </Stack.Navigator>
