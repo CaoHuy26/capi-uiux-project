@@ -24,7 +24,7 @@ const OrderStack = () => {
         name='Payment'
         component={PaymentScreen}
         options={{
-          title: 'Xác nhận và thanh toán',
+          title: 'Xác nhận đơn hàng',
           headerTitleStyle: {
             fontSize: 18,
             fontWeight: 'bold',

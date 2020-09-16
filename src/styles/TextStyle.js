@@ -49,6 +49,10 @@ const TextStyle = StyleSheet.create({
   body4: {
     fontSize: 12,
     color: COLOR.neutral4
+  },
+  body5: {
+    fontSize: 14,
+    color: COLOR.neutral1
   }
 });
 
