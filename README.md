@@ -11,18 +11,27 @@ $ npm run ios (Iphone X)
 ```
 
 ## Giới thiệu dự án
-- Tên dự án: VietEco
+- Tên dự án: **VietEco**
 - Mô tả: Ứng dụng đặt đồ ăn thuần Việt và thực phẩm sạch đến bàn ăn của từng gia đình với tính năng mua chung giúp giảm thiểu tối đa chi phí bỏ ra
 - Thiết kế dành riêng cho Iphone X
 
 ### Wireframe
 ![wireframe](https://user-images.githubusercontent.com/33257682/94368126-d3d32e80-010c-11eb-9f70-132656ca9efe.png)
 
-## Team
+### Component
+
+### UI
+
+### Team
 - Trần Trung Hiếu
 - Hoàng Thị Bích
 - Vũ Anh
 - Cao Huy
+
+### Tools
+- Figma
+- Google forms: User Survey
+- Maze design: User Testing
 
 ## Hình ảnh khoá học
 ![IMG_3000](https://user-images.githubusercontent.com/33257682/94371694-8c579d00-0122-11eb-839a-0a49c30332a9.png)
