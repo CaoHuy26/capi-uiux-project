@@ -21,6 +21,8 @@ $ npm run ios (Iphone X)
 ### Component
 
 ### UI
+![UI](https://user-images.githubusercontent.com/33257682/94383177-7f11d100-0169-11eb-9804-950836ad6e75.png)
+
 
 ### Team
 - Trần Trung Hiếu
